@@ -1,0 +1,50 @@
+public class Book { 
+	
+	private String id;
+	private String emriLibrit;
+	private String autori;
+	private double cmimi;
+
+	public Book(String i, String e, String a, double c) {
+		id = i; 
+		emriLibrit = e;
+		autori = a;
+		cmimi = c;
+	}
+
+	//metodat per marrjen e informateve
+	public String getId() {
+		return id;
+	}
+	public String getEmri() {
+		return emriLibrit;
+	}
+	public String getAutori()  {
+		return autori;
+	}
+	public double getCmimi() {
+		return cmimi;
+	}
+	public String toString() {
+		return id + ": " + emriLibrit + " - " + autori + " - " + cmimi + " Euro"; 
+	}
+
+	public void setEmriLibrit(String parametri_emriLibrit) {
+		emriLibrit = parametri_emriLibrit;
+	}
+	public void setAutori(String parametri_autori)  {
+		autori = parametri_autori;
+	}
+	public void setCmimi(double parametri_cmimi) {
+		cmimi = parametri_cmimi;
+	}
+
+	public boolean equals(Object obj) {
+		if(obj instanceof Book) {
+			Book a = (Book)obj;
+			if(id.equals(a.getId()))
+				return true;
+		}
+		return false;
+	}
+}
